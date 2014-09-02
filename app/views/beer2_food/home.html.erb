@@ -1,0 +1,27 @@
+<h1>Beer2Food</h1>
+<h3>Display all Pairings</h3>
+
+ <%= link_to 'Get Food Recomendations', 'getfood' %>
+<br>
+<br>
+<br>
+<table>
+	<h3 style= text-align:left>Food2Beer Pairings</h3>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Beer Style</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.beerStyle %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,31 @@
+<h1>Beer2Food</h1>
+<h3>Enter a Beer Style to get a food recomendation</h3>
+<%= link_to 'See All Pairings', 'home' %>
+
+<%= form_tag('getfood', method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<table>
+<h3 style= text-align:left>Food2Beer Pairings</h3>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Beer Style</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.beerStyle %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
